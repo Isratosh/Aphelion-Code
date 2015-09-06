@@ -19,6 +19,9 @@
 			M.Paralyse(5000000000)
 			log_admin("\red [key_name_admin(usr)] has frozen [key_name(M)].", 1)
 			message_admins("\blue [key_name_admin(usr)] froze [key_name_admin(M)].", 1)
+			var/adminomaly = new/obj/effect/overlay/adminoverlay
+			spawn(50)
+			M.overlays += adminomaly
 			return
 		else if (M.paralysis)
 			M << "<b> <font color= red>You have been unfrozen by <a href='?priv_msg=\ref[usr.client]'>[key]</a></b></font>"
